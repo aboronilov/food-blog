@@ -3,8 +3,8 @@ from django.db import models
 
 class Category(models.Model):
     DRINKS = "Drinks"
-    DESSERTS = "Desserts"
-    DINNERS = "Dinners"
+    MEAT = "Meat"
+    BURGER = "Burger"
     BREAKFESTS = "Breakfests"
     SALADS = "Salads"
     HEALTHY = "Healthy"
@@ -12,7 +12,7 @@ class Category(models.Model):
     INSTANT = "Instant"
 
     CATEGORY_CHOICES = tuple((category, category.title()) for category in [
-        DRINKS, DESSERTS, DINNERS, BREAKFESTS, SALADS, HEALTHY, APPETIZERS, INSTANT
+        DRINKS, MEAT, BURGER, BREAKFESTS, SALADS, HEALTHY, APPETIZERS, INSTANT
     ])
 
     name = models.CharField(choices=CATEGORY_CHOICES, max_length=255)

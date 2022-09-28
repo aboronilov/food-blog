@@ -11,9 +11,8 @@ import {
   ThemeProvider,
   Typography,
 } from "@mui/material";
-import burger from "../../static/hamburger2.jpg";
 
-const CardItem = ({ myDirection }) => {
+const CardItem = ({ myDirection, postHref, image, title, shortDesc }) => {
   const theme = createTheme();
 
   theme.typography.h5 = {
@@ -30,7 +29,7 @@ const CardItem = ({ myDirection }) => {
     <Container>
       <Box mt={3}>
         <Link
-          href="http://localhost:3000/details"
+          href={postHref}
           sx={{ textDecoration: "none" }}
         >
           <Card>
@@ -47,7 +46,7 @@ const CardItem = ({ myDirection }) => {
               <CardMedia
                 component="img"
                 // height="300"
-                image={burger}
+                image={image}
                 alt="burger"
                 sx={{
                   width: { xs: "350px", md: "400px" },
@@ -64,14 +63,11 @@ const CardItem = ({ myDirection }) => {
               />
               <CardContent>
                 <Typography gutterBottom variant="h4" align="center">
-                  Royal Burger
+                  {title}
                 </Typography>
                 <ThemeProvider theme={theme}>
                   <Typography variant="h5" gutterBottom color="text.secondary">
-                    When ready to cook, brush and oil the grill grate. Place the
-                    burgers on the hot grate, onion side down. Grill the burgers
-                    until cooked to taste, 3 to 4 minutes per side for
-                    medium-rare.
+                    {shortDesc}
                   </Typography>
                 </ThemeProvider>
                 <CardActions>

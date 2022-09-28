@@ -5,7 +5,7 @@ from rest_framework import routers
 router = routers.SimpleRouter()
 router.register("posts", RecipeApiView, basename="posts")
 router.register("categories", CategoryApiView, basename="categories")
-router.register("categories-posts", RecipeApiView, basename="categories-posts")
+router.register("categories-posts", CategoryRecipeViewSet, basename="categories-posts")
 
 urlpatterns = [
     path("", include(router.urls))
