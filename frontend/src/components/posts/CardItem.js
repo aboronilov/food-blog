@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 
-const CardItem = ({ myDirection, postHref, image, title, shortDesc }) => {
+const CardItem = ({ myDirection, blogHref, image, title, shortDesc }) => {
   const theme = createTheme();
 
   theme.typography.h5 = {
@@ -25,11 +25,12 @@ const CardItem = ({ myDirection, postHref, image, title, shortDesc }) => {
       fontSize: "1.5rem",
     },
   };
+
   return (
     <Container>
       <Box mt={3}>
         <Link
-          href={postHref}
+          href={blogHref}
           sx={{ textDecoration: "none" }}
         >
           <Card>
@@ -51,10 +52,8 @@ const CardItem = ({ myDirection, postHref, image, title, shortDesc }) => {
                 alt="burger"
                 sx={{
                   width: { xs: "350px", md: "400px" },
-                  // height: {xs: "350px", md: "400px"},
                   display: { xs: "flex" },
                   alignItems: { xs: "center" },
-                  // objectFit: "cover",
                   cursor: "pointer",
                   "&:hover": {
                     opacity: 0.8,
@@ -64,8 +63,8 @@ const CardItem = ({ myDirection, postHref, image, title, shortDesc }) => {
                   },
                 }}
               />
-              <CardContent>
-                <Typography gutterBottom variant="h4" align="center">
+              <CardContent sx={{minHeight:'260px'}}>
+                <Typography sx={{ typography: {md: "h4", sm: 'h6' } }} align="center">
                   {title}
                 </Typography>
                 <ThemeProvider theme={theme}>

@@ -46,6 +46,7 @@ const Posts = () => {
               title={item.title}
               shortDesc={item.short_desc}
               image={item.image}
+              blogHref={`/details/${item.slug}`}
             />
           </Grid>
         ))}
@@ -69,6 +70,7 @@ const Posts = () => {
               title={pop.title}
               shortDesc={pop.short_desc}
               image={`${host}${pop.image}`}
+              blogHref={`/details/${pop.slug}`}
             />
           </Grid>
         ))}

@@ -28,6 +28,6 @@ class CategoryRecipeViewSet(viewsets.ViewSet):
 
 class PopularRecipesViewSet(viewsets.ViewSet):
     def list(self, request, *args, **kwargs):
-        queryset = Recipe.objects.filter(post_label__iexact="Popular")
+        queryset = Recipe.objects.filter(post_label__iexact="Popular").order_by("-id")[:4]
         serializer = RecipeSerializer(queryset, many=True)
         return Response(serializer.data)
