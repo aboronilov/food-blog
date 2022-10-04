@@ -46,12 +46,15 @@ const CardItem = ({ myDirection, postHref, image, title, shortDesc }) => {
               <CardMedia
                 component="img"
                 // height="300"
+                
                 image={image}
                 alt="burger"
                 sx={{
                   width: { xs: "350px", md: "400px" },
+                  // height: {xs: "350px", md: "400px"},
                   display: { xs: "flex" },
                   alignItems: { xs: "center" },
+                  // objectFit: "cover",
                   cursor: "pointer",
                   "&:hover": {
                     opacity: 0.8,

@@ -1,8 +1,8 @@
 import { Box, Container, Grid, styled, Typography } from '@mui/material';
-import burger from "../../static/hamburger1.jpg";
-import drinks from "../../static/drink1.jpg";
-import meat from "../../static/meat1.jpeg";
-import appetizer from "../../static/appetizer1.jpg";
+import burger from "../../static/hamburger.jpg";
+import drinks from "../../static/drink.jpg";
+import meat from "../../static/meat.jpeg";
+import appetizer from "../../static/appetizer.jpg";
 
 const Hero = () => {
     const StyledCard = styled(Box)(({theme})=>({

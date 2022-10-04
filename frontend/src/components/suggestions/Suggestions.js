@@ -1,9 +1,9 @@
 import React from "react";
 import { Box, Stack, styled, Typography } from "@mui/material";
-import drinks from "../../../src/static/drinks.jpg";
-import desserts from "../../../src/static/desserts.jpg";
-import dinners from "../../../src/static/dinners.jpg";
-import breakfests from "../../../src/static/breakfests.jpg";
+import drinks from "../../../src/static/drink.jpg";
+import instant from "../../../src/static/instant.jpg";
+import meat from "../../../src/static/meat.jpeg";
+import salads from "../../../src/static/salads.jpg";
 
 const Suggestions = () => {
   const StyledCard = styled(Box)(({ theme }) => ({
@@ -58,16 +58,16 @@ const Suggestions = () => {
         <StyledTypography>Drinks</StyledTypography>
       </CardBox>
       <CardBox>
-        <StyledCard sx={{ backgroundImage: `url(${desserts})` }} />
-        <StyledTypography>Desserts</StyledTypography>
+        <StyledCard sx={{ backgroundImage: `url(${instant})` }} />
+        <StyledTypography>Instant</StyledTypography>
       </CardBox>
       <CardBox>
-        <StyledCard sx={{ backgroundImage: `url(${dinners})` }} />
-        <StyledTypography>Dinners</StyledTypography>
+        <StyledCard sx={{ backgroundImage: `url(${meat})` }} />
+        <StyledTypography>Meat</StyledTypography>
       </CardBox>
       <CardBox>
-        <StyledCard sx={{ backgroundImage: `url(${breakfests})` }} />
-        <StyledTypography>Breakfests</StyledTypography>
+        <StyledCard sx={{ backgroundImage: `url(${salads})` }} />
+        <StyledTypography>Salads</StyledTypography>
       </CardBox>
     </Stack>
   );

@@ -3,6 +3,7 @@
 .DS_Store
 .env
 /backend/env/
+/frontend/env/
 */settings/local.py
 /staticfiles/*
 /mediafiles/*

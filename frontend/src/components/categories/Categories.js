@@ -1,23 +1,15 @@
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
-import drinks from "../../static/drinks.jpg";
-import desserts from "../../static/desserts.jpg";
-import dinners from "../../static/dinners.jpg";
-import breakfests from "../../static/breakfests.jpg";
-import salads from "../../static/salads.jpg";
-import healthy from "../../static/healthy.jpeg";
-import appetizers from "../../static/appetizers.jpg";
-import instant from "../../static/instant.jpg";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Categories = () => {
+
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const host = process.env.REACT_APP_API_URL;
     const fetchCatetories = async () => {
       try {
         const response = await axios.get(`${host}/api/categories/`);
-        console.log(response)
         setCategories(response.data);
       } catch (error) {
         console.log(error);
@@ -25,6 +17,7 @@ const Categories = () => {
     };
     fetchCatetories();
   }, []);
+
 
   const StyledCard = styled(Box)(({ theme }) => ({
     display: "flex",

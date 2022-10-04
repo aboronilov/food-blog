@@ -24,3 +24,10 @@ class CategoryRecipeViewSet(viewsets.ViewSet):
             queryset = Recipe.objects.filter(category=pk)
         serializer = RecipeSerializer(queryset, many=True)
         return Response(serializer.data)
+
+
+class PopularRecipesViewSet(viewsets.ViewSet):
+    def list(self, request, *args, **kwargs):
+        queryset = Recipe.objects.filter(post_label__iexact="Popular")
+        serializer = RecipeSerializer(queryset, many=True)
+        return Response(serializer.data)
