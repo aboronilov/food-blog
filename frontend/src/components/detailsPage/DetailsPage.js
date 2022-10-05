@@ -50,7 +50,16 @@ const DetailsPage = () => {
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
       >
         <CardMedia
-          sx={{ hight: "500px", width: "500px" }}
+          sx={{ 
+            hight: "500px", 
+            width: "500px",
+            cursor: "pointer",
+            "&:hover": {
+              opacity: 0.8,
+              transition: `all 0.50s ease`,
+              boxSizing: "border-box",
+              zIndex: 1, 
+          }}}
           component="img"
           image={detailPage.image}
           alt="burger"

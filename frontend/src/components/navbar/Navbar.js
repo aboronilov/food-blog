@@ -3,6 +3,7 @@ import {
   AppBar,
   Box,
   Drawer,
+  Link,
   List,
   ListItem,
   ListItemButton,
@@ -12,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import Search from "../search/Search";
 
 const Navbar = () => {
   const StyledToolbar = styled(Toolbar)({
@@ -40,15 +42,17 @@ const Navbar = () => {
       <AppBar color="default" position="sticky" elevation={4}>
         <StyledToolbar>
           <Box>
-            <Typography
-              sx={{
-                fontSize: { xs: 18, sm: 22, md: 28, lg: 32 },
-                fontFamily: "Sacramento, cursive",
-              }}
-              color={"tomato"}
-            >
-              Boronilov Blog
-            </Typography>
+            <Link href="/" sx={{ textDecoration: "none" }}>
+              <Typography
+                sx={{
+                  fontSize: { xs: 18, sm: 22, md: 28, lg: 32 },
+                  fontFamily: "Sacramento, cursive",
+                }}
+                color={"tomato"}
+              >
+                Boronilov Blog
+              </Typography>
+            </Link>
           </Box>
           <MenuBox sx={{ display: { xs: "none", md: "flex" } }}>
             {MenuItems.map((item) => (
@@ -57,18 +61,7 @@ const Navbar = () => {
               </Typography>
             ))}
           </MenuBox>
-          <Box display="flex" alignItems="center">
-            <TextField
-              sx={{
-                width: { xs: 150 },
-                padding: 0,
-              }}
-              color="warning"
-              label="Search"
-              variant="outlined"
-              margin="dense"
-            />
-          </Box>
+          <Search />
           <Box sx={{ display: { xs: "flex", md: "none" }, cursor: "pointer" }}>
             <MenuIcon onClick={() => setIsMenuOpen(!isMenuOpen)} />
           </Box>
