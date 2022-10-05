@@ -46,7 +46,8 @@ const CardItem = ({ myDirection, blogHref, image, title, shortDesc }) => {
             >
               <CardMedia
                 component="img"
-                // height="300"
+                // height="450px"
+                // width="450px"
                 
                 image={image}
                 alt="burger"

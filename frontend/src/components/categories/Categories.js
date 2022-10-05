@@ -1,9 +1,8 @@
-import { Box, Container, Stack, styled, Typography } from "@mui/material";
+import { Box, Container, Link, Stack, styled, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Categories = () => {
-
   const [categories, setCategories] = useState([]);
   useEffect(() => {
     const host = process.env.REACT_APP_API_URL;
@@ -17,7 +16,6 @@ const Categories = () => {
     };
     fetchCatetories();
   }, []);
-
 
   const StyledCard = styled(Box)(({ theme }) => ({
     display: "flex",
@@ -67,10 +65,12 @@ const Categories = () => {
         sx={{ overflow: "auto" }}
       >
         {categories.map((item) => (
-          <CardBox key={item.id}>
-            <StyledCard sx={{ backgroundImage: `url(${item.image})` }} />
-            <StyledTypography>{item.name}</StyledTypography>
-          </CardBox>
+          <Link href={`category/${item.id}`} sx={{textDecoration: "none"}}>
+            <CardBox key={item.id}>
+              <StyledCard sx={{ backgroundImage: `url(${item.image})` }} />
+              <StyledTypography>{item.name}</StyledTypography>
+            </CardBox>
+          </Link>
         ))}
       </Stack>
     </Box>
